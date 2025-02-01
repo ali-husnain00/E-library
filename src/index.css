@@ -1,0 +1,25 @@
+body {
+    font-family: 'Merriweather';
+    background-color: #F8F8F8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Merriweather';
+    font-weight: 700;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p{
+    color:  #333333;
+}

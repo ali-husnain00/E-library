@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home{
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
