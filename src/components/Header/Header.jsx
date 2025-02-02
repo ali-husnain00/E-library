@@ -1,13 +1,14 @@
 import React from "react";
+import {Link} from "react-router"
 import "./Header.css";
 
 const images = [
-  "/src/assets/images/img1.jpg",
-  "/src/assets/images/img2.jpg",
-  "/src/assets/images/img3.jpg",
-  "/src/assets/images/img4.jpg",
-  "/src/assets/images/img5.jpg",
-  "/src/assets/images/img6.jpg",
+  "https://tse3.mm.bing.net/th?id=OIP.L7p5oOjMw_Wmn_ta8Y8wOAHaLH&w=200&h=300&c=7",
+  "https://tse3.mm.bing.net/th?id=OIP.bxANBol8UouhsbTDmiNGiQHaLL&w=200&h=302&c=7",
+  "https://tse3.mm.bing.net/th?id=OIP.40YdU1lR2EQdFRfSxnTERQHaHa&w=200&h=200&c=7",
+  "https://tse4.mm.bing.net/th?id=OIP.IYEWEUWRELxbLkWruhNJnQHaKI&w=200&h=273&c=7",
+  "https://tse3.mm.bing.net/th?id=OIP.ZfYHb383Tk0kUMP-XsfWegHaJI&w=200&h=246&c=7",
+  "https://tse3.mm.bing.net/th?id=OIP.PzUuwgaWbJLk4-1dwvEhAgHaFj&w=355&h=355&c=7",
 ];
 
 const Header = () => {
@@ -20,7 +21,7 @@ const Header = () => {
           Read, download, and enjoy your next favorite book!
         </p>
         <div>
-          <button className="header-btn">Explore books</button>
+          <Link to="/allbooks"><button className="header-btn">Explore books</button></Link>
         </div>
       </div>
 

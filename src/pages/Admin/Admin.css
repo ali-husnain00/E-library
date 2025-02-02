@@ -1,0 +1,55 @@
+.admin-page{
+    width: 100vw;
+    min-height: calc(100vh - 90px);
+    height: auto;
+    padding: 50px 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-books-form{
+    width: max-content;
+    height: max-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #1A2A44;
+    border-radius: 10px;
+}
+
+.add-books-form h2{
+    color: #1A2A44;
+}
+
+.add-books-form input{
+    width: 300px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #1A2A44;
+}
+
+.add-books-form textarea{
+    width: 300px;
+    resize: none;
+    border: 1px solid #1A2A44;
+    border-radius: 5px;
+    padding: 8px 10px;
+    outline: none;
+    height: 115px;
+}
+
+.addBook-btn{
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px ;
+    background-color: #3674B5 ;
+    color: white;
+    font-size: 16px;
+    font-family: 'Merriweather';
+    cursor: pointer;
+}

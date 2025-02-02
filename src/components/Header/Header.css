@@ -15,12 +15,13 @@
     justify-content: center;
     gap: 15px;
     opacity: 0;
-    animation: slideUp 1s forwards;
+    animation: slideUp 0.5s forwards;
 }
 
 .header-content h1{
     color: #1A2A44;
     font-size: 50px;
+    line-height: 70px;
 }
 
 .header-content p{
@@ -30,8 +31,8 @@
 .header-btn{
     padding: 12px 30px;
     border: none;
-    background-color: #1A2A44 ;
-    border-radius: 20px;
+    background-color: #3674B5 ;
+    border-radius: 25px;
     cursor: pointer;
     color: white;
     font-size: 17px;
@@ -40,7 +41,7 @@
 }
 
 .header-btn:hover{
-  transform: scaleX(1.1);
+  transform: scale(1.1);
 }
 
 .carousel-container {
