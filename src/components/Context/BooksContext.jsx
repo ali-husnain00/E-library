@@ -1,50 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { createContext } from "react";
 
 export const BooksContext = createContext(null);
 
-
 const BooksContextProvider = ({ children }) => {
-
-    const [bookName, setBookName] = useState("");
-    const [authorName, setAuthorName] = useState("");
-    const [description, setDescription] = useState("");
-    const [category, setCategory] = useState("");
-    const [rating, setRating] = useState("");
-    const [bookImage, setBookImage] = useState("");
-    const [downloadLink, setDownloadLink] = useState("");
-    const [readLink, setReadLink] = useState(""); 
     const [books, setBooks] = useState([]);
 
-    const handleAddBooks = () =>{
-        setBooks((prev) => [...prev, {bookName, authorName, description, category, rating, bookImage, downloadLink, readLink}]);
+    const fetchBookdata = async () => {
+        try {
+            const apiKey = "AIzaSyCMl0YAHkIiAqsdhF5LhbT8neeTXOTaeoM";
+            const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=*&maxResults=10&startIndex=2&key=${apiKey}`);
+            const data = await response.json();
+            setBooks(data.items);  // Make sure you're setting the books correctly here (using 'items')
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     useEffect(() => {
-        const savedBooks = localStorage.getItem("books");
-        if (savedBooks) {
-          setBooks(JSON.parse(savedBooks));
-        }
-      }, []); // Empty dependency array to run only once when the component mounts
-    
-      // Save books to localStorage when books state changes
-      useEffect(() => {
-        if (books.length > 0) {
-          localStorage.setItem("books", JSON.stringify(books));
-        }
-      }, [books]); // Runs whenever books state changes
-    
+        fetchBookdata();
+    }, []);
+
+    // Log books whenever it updates
+    useEffect(() => {
+        console.log(books);
+    }, [books]);  // This will log after books are updated
 
     const value = {
-        bookName, setBookName,
-        authorName, setAuthorName,
-        description, setDescription,
-        category, setCategory,
-        rating, setRating,
-        bookImage, setBookImage,
-        downloadLink, setDownloadLink,
-        readLink, setReadLink,
-        handleAddBooks,
         books, setBooks,
     }
 
@@ -53,7 +35,6 @@ const BooksContextProvider = ({ children }) => {
             {children}
         </BooksContext.Provider>
     )
-
 }
 
 export default BooksContextProvider;

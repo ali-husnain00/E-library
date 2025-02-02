@@ -14,7 +14,6 @@
     height: 70vh;
     justify-content: center;
     gap: 15px;
-    opacity: 0;
     animation: slideUp 0.5s forwards;
 }
 
@@ -52,7 +51,6 @@
     align-items: center;
     position: relative;
     perspective: 1000px; /* Enables 3D effect */
-    opacity: 0;
     animation: slideUp 1s forwards;
   }
 

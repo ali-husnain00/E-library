@@ -1,36 +1,63 @@
-import React, { useContext } from 'react'
-import { BooksContext } from '../Context/BooksContext'
-import "./books.css"
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import {Link } from "react-router"
+import { BooksContext } from '../Context/BooksContext';
+import './books.css';
+
 
 const Books = () => {
 
+    const { books } = useContext(BooksContext);
+    const [inView, setInView] = useState(false);
+    const booksRef = useRef([]);
 
-    const {books} = useContext(BooksContext);
-    const displayedBooks = books.slice(0, 10);
-
-  return (
-    <div className='books'>
-        <h1>Our best books to read</h1>
-        <ul className="Books-slider">
-            {
-                displayedBooks.map((book, index) =>{
-                    return(
-                        <li key={index}>
-                            <img src={book.bookImage} alt="" />
-                            <p>{book.bookName}</p>
-                            <p>{book.bookRating}</p>
-                            <div className="action-btns">
-                                <button className='read-btn'><a href={book.readLink}>Read</a></button>
-                                <button className='download-btn'><a href={book.downloadLink}>Download</a></button>
-                            </div>
-                        </li>
-                    )
-                })
+    const checkVisibility = () =>{
+        booksRef.current.forEach((book, index) =>{
+            const rect = book.getBoundingClientRect();
+            const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+            if(isVisible){
+                setInView(true);
             }
-        </ul>
+            else{
+                setInView(false);
+            }
+        })
+    }
 
-    </div>
-  )
+    useEffect(() =>{
+        window.addEventListener("scroll", checkVisibility)
+        checkVisibility();
+
+        return () =>{
+            window.removeEventListener('scroll', checkVisibility);
+        }
+    },[])
+
+    const handlePreview = (book) => {
+        window.open(book.volumeInfo.previewLink, "_blank");
+    }
+
+    return (
+        <div className='books'>
+            <h1>Our best Books to Read</h1>
+            <div className="books-container">
+                {
+                    books.map((book, index) => {
+                        return (
+                            <Link to="/allbooks">
+                            <div key={index} className={`book-card ${inView ? "appeared" : ""}`} ref={(el) => booksRef.current[index] = el}>
+                                <img className='book-img'
+                                    src={book.volumeInfo.imageLinks?.thumbnail}
+                                    alt={book.volumeInfo.title}
+                                />
+                                <button className='read-btn' onClick={() => handlePreview(book)}>Read Now</button>
+                            </div>
+                            </Link>
+                        )
+                    })
+                }
+            </div>
+        </div>
+    )
 }
 
-export default Books
+export default Books;
