@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createContext } from "react";
+import dotenv from "dotenv";
 
 export const BooksContext = createContext(null);
 
@@ -8,7 +9,8 @@ const BooksContextProvider = ({ children }) => {
 
     const fetchBookdata = async () => {
         try {
-            const apiKey = "AIzaSyCMl0YAHkIiAqsdhF5LhbT8neeTXOTaeoM";
+            const apiKey = import.meta.env.VITE_REACT_GB_KEY;
+            console.log(`Api key:`,apiKey);
             const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=*&maxResults=10&startIndex=2&key=${apiKey}`);
             const data = await response.json();
             setBooks(data.items);  // Make sure you're setting the books correctly here (using 'items')
