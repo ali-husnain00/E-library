@@ -1,42 +1,29 @@
-.all-books{
+.category-page{
     width: 100%;
-    min-height: 90vh;
+    min-height: 100vh;
     height: auto;
     padding: 50px 200px;
-    background-color: white;
     display: flex;
     flex-direction: column;
+    gap: 40px;
     align-items: center;
     animation: fadeIn 2s forwards;
 }
 
-.all-books h1{
+.category-page h1{
     color: #1A2A44;
     font-size: 36px;
 }
 
-.book-search-bar{
-    padding: 10px 30px;
-    border-radius: 25px;
-    width: 500px;
-    border: 1px solid #1A2A44 ;
-    outline: none;
-    font-size: 16px;
-    font-family: 'Merriweather';
-    margin-top: 40px;
-}
-
-.all-books .books-container{
-    width: 100%;
-    min-height: 80vh;
-    height: auto;
+.categories-books-container{
     display: flex;
-    gap: 40px;
     flex-wrap: wrap;
+    width: 100%;
+    gap: 40px;
     justify-content: center;
 }
 
-.all-books .all-book-card{
+.categories-book-card{
     width: max-content;
     height: max-content;
     padding: 15px;
@@ -48,10 +35,9 @@
     justify-content: center;
     align-items: center;
     border: 2px solid #3674B5 ;
-    position: relative;
 }
 
-.book-img{
+.cate-book-img{
     width: 200px;
     height: 250px;
     border-radius: 5px;
@@ -67,7 +53,10 @@
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    z-index: 1000;
+}
+
+span{
+    color:#3674B5 ;
 }
 
 @keyframes fadeIn {

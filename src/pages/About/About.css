@@ -1,0 +1,108 @@
+/* About Us Page Styling */
+.about-us {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f4f4f9;
+    padding: 50px;
+    animation: fadeIn 1s forwards;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background: url('/path-to-your-image.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    color: #3674B5;
+    font-weight: 700;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  /* Mission Section */
+  .mission-section {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .mission-section h2 {
+    font-size: 2.5rem;
+    color: #3674B5;
+  }
+  
+  .mission-section p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  /* Features Section */
+  .features-section {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .features-section h2 {
+    font-size: 2.5rem;
+    color: #3674B5;
+    margin-bottom: 40px;
+  }
+  
+  .features-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .feature-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .feature-card i {
+    font-size: 2.5rem;
+    color: #3674B5;
+    margin-bottom: 20px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3674B5;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  

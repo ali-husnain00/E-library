@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import './Categories.css';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { BooksContext } from '../Context/BooksContext';
 
 const Categories = () => {
   const [inView, setInView] = useState(false);
@@ -10,6 +11,9 @@ const Categories = () => {
     { id: 3, name: 'Personal Development', icon: 'fas fa-users' },
     { id: 4, name: 'Science & Technology', icon: 'fas fa-flask' },
   ];
+
+  const {setCategory} = useContext(BooksContext);
+  const navigate = useNavigate();
 
   const categoryRefs = useRef([]);
 
@@ -34,6 +38,19 @@ const Categories = () => {
     };
   }, []);
 
+
+  const handleCategory = (category) => {
+    console.log("Selected Category:", category.name);  // Verify category name
+    setCategory(category.name.toLowerCase());  // Set the category
+    navigate("/category");
+}
+
+useEffect(() => {
+  window.scrollTo(0, 0);  
+}, []);
+
+  
+
   return (
     <div className="book-categories">
       <Link to="/admin-addBooks"><button className='admin-btn'>Admin</button></Link>
@@ -43,7 +60,7 @@ const Categories = () => {
           <div className="category-card" key={category.id}>
             <div
               className={`category-icon ${inView ? 'show' : ''}`}
-              ref={(el) => categoryRefs.current[index] = el}
+              ref={(el) => categoryRefs.current[index] = el} onClick={() =>handleCategory(category)}
             >
               <i className={category.icon}></i>
             </div>

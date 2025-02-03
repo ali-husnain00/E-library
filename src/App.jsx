@@ -6,6 +6,8 @@ import AllBooks from './pages/AllBooks/AllBooks '
 import About from './pages/About/About'
 import Admin from './pages/Admin/Admin'
 import Footer from './components/Footer/Footer'
+import BookDetails from './components/BookDetails/BookDetails'
+import CategoryPage from './components/CategoryPage/CategoryPage'
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
         <Route path='/allbooks' element = {<AllBooks/>} />
         <Route path='/about' element = {<About/>} />
         <Route path='/admin-addBooks' element = {<Admin/>} />
+        <Route path='/bookDetails' element = {<BookDetails/>} />
+        <Route path='/category' element = {<CategoryPage/>} />
       </Routes>
       <Footer/>
     </div>
