@@ -1,20 +1,24 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { BooksContext } from '../../components/Context/BooksContext';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 import "./AllBooks.css";
 
 const AllBooks = () => {
-  const { books, handleDetails } = useContext(BooksContext);
+  const { books, handleDetails, searchValue, setSearchValue, handleSearch, } = useContext(BooksContext);
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   const handlePreview = (book, e) => {
     e.stopPropagation(); 
     window.open(book.volumeInfo.previewLink, "_blank");
   };
 
-  const filteredBooks = books.filter(book => 
-    book.volumeInfo.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const handleSearchedBooks = () =>{
+    setSearchValue(search);
+    navigate(`/search`);
+  }
+
+  
 
   useEffect(() => {
     window.scrollTo(0, 0); 
@@ -27,13 +31,15 @@ const AllBooks = () => {
         <input
           type="text"
           placeholder='Search by book name'
-          className='book-search-bar'
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          className='book-search-bar' value={search}
+          onChange={(e) =>setSearch(e.target.value)}
         />
+        <button className='search-btn' onClick={handleSearchedBooks}>Search</button>
       </div>
       <div className="books-container">
-        {filteredBooks.map((book, index) => (
+        {books
+        .filter(book => book.volumeInfo.imageLinks?.thumbnail)
+        .map((book, index) => (
           <div key={index} className='all-book-card'>
             <Link to="/bookDetails" onClick={() => handleDetails(book)}> 
               <img className='book-img'

@@ -4,7 +4,7 @@ import "./CategoryPage.css"
 import { Link } from 'react-router';
 
 const CategoryPage = () => {
-    const { categoriesBooks, category, handleDetails } = useContext(BooksContext);
+    const { categoriesBooks, category, handleDetails, loading } = useContext(BooksContext);
 
     const handlePreview = (book) => {
         window.open(book.volumeInfo.previewLink, "_blank");
@@ -14,7 +14,19 @@ const CategoryPage = () => {
         window.scrollTo(0, 0);  
     }, []);
 
-    if (!categoriesBooks) return <p>Loading...</p>;  
+    if (loading) {
+        return (
+            <div className="loading">
+                <div className="loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        )
+    } 
 
     return (
         <div className="category-page">
@@ -24,7 +36,9 @@ const CategoryPage = () => {
             ) : (
                 <div className="categories-books-container">
                 {
-                    categoriesBooks.map((book, index) => {
+                    categoriesBooks
+                    .filter(book => book.volumeInfo.imageLinks?.thumbnail)
+                    .map((book, index) => {
                         return (
                             <div key={index} className='categories-book-card' onClick={() =>handleDetails(book)}>
                                 <Link to="/bookDetails" onClick={() =>handleDetails(book)}>

@@ -52,4 +52,24 @@
       opacity: 1;
     }
   }
+
+  @media (max-width: 1730px){
+    .navbar{
+      padding: 10px 150px;
+    }
+  }
+  
+  @media (max-width: 1620px){
+    .navbar{
+      padding: 10px 100px;
+    }
+  }
+
+  @media (max-width:1410px){
+    .navbar{
+      padding: 10px 70px;
+    }
+  }
+    
+
   

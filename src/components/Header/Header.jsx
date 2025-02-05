@@ -32,8 +32,8 @@ const Header = () => {
             <img
               key={index}
               src={img}
+              className={`img${index + 1}`}
               alt={`Book ${index + 1}`}
-              style={{ transform: `rotateY(${index * 60}deg) translateZ(250px)` }}
             />
           ))}
         </div>

@@ -16,14 +16,25 @@
 }
 
 .book-search-bar{
-    padding: 10px 30px;
-    border-radius: 25px;
+    padding: 10px 12px;
     width: 500px;
     border: 1px solid #1A2A44 ;
     outline: none;
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'Merriweather';
     margin-top: 40px;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-btn{
+    background-color: #3674B5;
+    padding: 10px;
+    color: white;
+    font-family: 'Merriweather';
+    font-size: 16px;
+    border: 1px solid #1A2A44 ;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
 }
 
 .all-books .books-container{
