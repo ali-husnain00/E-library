@@ -28,39 +28,6 @@
     transition: 0.5s all ease linear;
 }
 
-.book-card{
-    width: max-content;
-    height: max-content;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    background-color: #D1F8EF;
-    border-radius: 10px;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #3674B5 ;
-    transition: 0.5s all ease-in-out;
-    transform: translateY(100px);
-}
-
-.book-img{
-    width: 200px;
-    height: 250px;
-    border-radius: 5px;
-}
-
-.read-btn{
-    padding: 8px 10px;
-    background-color: #3674B5;
-    color: white;
-    border: none;
-    font-size: 16px;
-    font-family: 'Merriweather';
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-}
 
 .appeared{
     animation: slideUp 0.5s forwards;
@@ -72,5 +39,67 @@
     }
     100%{
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 1730px){
+    .books{
+        padding: 100px 150px;
+    }
+}
+
+@media (max-width: 1620px){
+    .books{
+        padding: 100px 100px;
+    }
+}
+
+@media (max-width: 1410px){
+    .books{
+        padding: 100px 70px;
+    }
+}
+
+@media (max-width: 710px){
+    .books{
+        padding: 100px 40px;
+    }
+
+    .books h1{
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .book-card{
+        transform: translateY(0);
+    }
+
+    .book-img{
+        width: 130px;
+        height: 150px;
+    }
+
+    .read-btn{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 445px){
+    .books{
+        padding: 100px 20px;
+    }
+}
+
+@media (max-width: 410px){
+    .book-card{
+        padding: 10px;
+    }
+    .read-btn{
+        padding: 7px 7px;
+        font-size: 12px;
+    }
+    .book-img{
+        width: 80px;
+        height: 90px;
     }
 }

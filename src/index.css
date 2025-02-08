@@ -33,6 +33,40 @@ p{
     align-items: center;
 }
 
+.book-card{
+  width: max-content;
+  height: max-content;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: #D1F8EF;
+  border-radius: 10px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #3674B5 ;
+  transition: 0.5s all ease-in-out;
+  transform: translateY(100px);
+}
+
+.book-img{
+  width: 200px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.read-btn{
+  padding: 8px 10px;
+  background-color: #3674B5;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-family: 'Merriweather';
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
 /* From Uiverse.io by vk-uiux */ 
 .loader {
     position: relative;

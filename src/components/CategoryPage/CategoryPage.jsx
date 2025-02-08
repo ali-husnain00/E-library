@@ -40,9 +40,9 @@ const CategoryPage = () => {
                     .filter(book => book.volumeInfo.imageLinks?.thumbnail)
                     .map((book, index) => {
                         return (
-                            <div key={index} className='categories-book-card' onClick={() =>handleDetails(book)}>
+                            <div key={index} className='book-card' onClick={() =>handleDetails(book)}>
                                 <Link to="/bookDetails" onClick={() =>handleDetails(book)}>
-                                <img className='cate-book-img'
+                                <img className='book-img'
                                     src={book.volumeInfo.imageLinks?.thumbnail}
                                     alt={book.volumeInfo.title}
                                 />

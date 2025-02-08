@@ -34,17 +34,39 @@
     justify-content: center;
 }
 
-.searched-book-card{
-    width: max-content;
-    height: max-content;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    background-color: #D1F8EF;
-    border-radius: 10px;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #3674B5 ;
-    position: relative;
+.searchedBooks-list .book-card{
+    transform: translateY(0);
+}
+
+@media (max-width: 1730px){
+    .searched-books-page{
+        padding: 50px 150px;
+    }
+}
+
+@media (max-width: 1620px){
+    .searched-books-page{
+        padding: 50px 100px;
+    }
+}
+
+@media (max-width: 1410px){
+    .searched-books-page{
+        padding: 50px 70px;
+    }
+}
+
+@media (max-width: 710px){
+    .searched-books-page h1{
+        font-size: 26px;
+    }
+    .searched-books-page{
+        padding: 50px 40px;
+    }
+}
+
+@media (max-width: 445px){
+    .searched-books-page{
+        padding: 50px 20px;
+    }
 }

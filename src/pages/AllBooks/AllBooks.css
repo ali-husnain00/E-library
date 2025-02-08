@@ -47,39 +47,10 @@
     justify-content: center;
 }
 
-.all-books .all-book-card{
-    width: max-content;
-    height: max-content;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    background-color: #D1F8EF;
-    border-radius: 10px;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #3674B5 ;
-    position: relative;
+.all-books .book-card{
+    transform: translateY(0);
 }
 
-.book-img{
-    width: 200px;
-    height: 250px;
-    border-radius: 5px;
-}
-
-.read-btn{
-    padding: 8px 10px;
-    background-color: #3674B5;
-    color: white;
-    border: none;
-    font-size: 16px;
-    font-family: 'Merriweather';
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    z-index: 1000;
-}
 
 @keyframes fadeIn {
     0% {
@@ -89,3 +60,51 @@
       opacity: 100%;
     }
   }
+
+@media (max-width:1730px){
+    .all-books{
+        padding: 50px 150px;
+    }
+}
+
+@media (max-width: 1620px){
+    .all-books{
+        padding: 50px 100px;
+    }
+}
+
+@media (max-width: 1410px){
+    .all-books{
+        padding: 50px 70px;
+    }
+}
+
+@media (max-width: 710px){
+    .all-books{
+        padding: 50px 40px;
+    }
+    .book-search-bar{
+        width: 250px;
+    }
+}
+
+@media (max-width: 445px){
+    .all-books{
+        padding: 50px 20px;
+    }
+}
+
+@media (max-width: 410px){
+    .all-books h1{
+        font-size: 26px;
+    }
+    .book-search-bar{
+        width: 200px;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    .search-btn{
+        font-size: 14px;
+        padding: 8px;
+    }
+}

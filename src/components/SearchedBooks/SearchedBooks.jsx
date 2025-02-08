@@ -36,7 +36,7 @@ const SearchedBooks = () => {
                             {searchedBooks
                             .filter(book => book.volumeInfo.imageLinks?.thumbnail)
                             .map((book, index) => (
-                                <div key={index} className='searched-book-card'>
+                                <div key={index} className='book-card'>
                                     <Link to="/bookDetails" onClick={() => handleDetails(book)}>
                                         <img className='book-img'
                                             src={book.volumeInfo.imageLinks?.thumbnail}

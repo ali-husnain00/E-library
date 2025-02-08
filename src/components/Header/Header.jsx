@@ -16,10 +16,11 @@ const Header = () => {
     <div className="header">
       <div className="header-content">
         <h1>Welcome to Your Digital Library of Knowledge!</h1>
-        <p>
-          Discover a vast collection of books and explore the world of knowledge. <br />
-          Read, download, and enjoy your next favorite book!
+       <div className="para">
+       <p>
+          Discover a vast collection of books and explore the world of knowledge. Read, download, and enjoy your next favorite book!
         </p>
+       </div>
         <div>
           <Link to="/allbooks"><button className="header-btn">Explore books</button></Link>
         </div>
