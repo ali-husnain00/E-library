@@ -15,11 +15,9 @@ const BookDetails = () => {
             {
                 bookDetails ? (
                     <div className="book-details-card">
-                        <div className="card-upper">
                             <div className="bd-img">
                                 <img src={bookDetails?.volumeInfo.imageLinks?.thumbnail} alt="" />
                             </div>
-                        </div>
                         <div className="bd-content">
                             <div className='gap'>
                                 <h3>Title:</h3>

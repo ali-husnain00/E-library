@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-content">
         <div className="footer-left">
-          <h2 className="footer-title">Bookshelf</h2>
+          <h2 className="footer-title"><a href="/">E-BooksShelf</a></h2>
           <p className="footer-description">
             Explore and read the best books from various genres. Start your reading adventure now.
           </p>
@@ -27,7 +27,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2025 Bookshelf. All Rights Reserved.</p>
+        <p>&copy; 2025 E-BooksShelf. All Rights Reserved.</p>
       </div>
     </div>
   );

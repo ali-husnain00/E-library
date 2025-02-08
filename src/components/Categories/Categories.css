@@ -1,6 +1,6 @@
 .book-categories {
     width: 100%;
-    min-height: max-content;
+    min-height: 50vh;
     height: auto;
     text-align: center;
     padding: 70px 200px;
@@ -14,15 +14,13 @@
   
   .categories-container {
     width: 100%;
-    height: 40vh;
+    min-height: 40vh;
+    height: auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 100px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    scroll-behavior: smooth;
-    margin-top: 20px;
   }
   
   .category-card {
@@ -65,15 +63,6 @@
   .category-card h3 {
     font-size: 18px;
     color: #1a2a44;
-  }
-  
-  .categories-container::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .categories-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
   }
 
   .admin-btn{
@@ -147,10 +136,6 @@
       padding: 70px 70px;
     }
 
-    .categories-container{
-      justify-content: start;
-    }
-
     .category-icon{
       width: 180px;
       height: 180px;
@@ -169,7 +154,6 @@
     }
 
     .categories-container{
-      justify-content: start;
       gap: 70px;
     }
 
@@ -194,7 +178,6 @@
     }
 
     .categories-container{
-      height: 25vh;
       gap: 40px;
     }
 
@@ -213,6 +196,19 @@
   @media (max-width: 445px){
     .book-categories{
       padding: 70px 20px;
+    }
+  }
+
+  @media (max-width: 410px){
+    .categories-container{
+      gap: 20px;
+    }
+    .category-icon{
+      width: 95px;
+      height: 92px;
+    }
+    .category-card h3{
+      font-size: 12px;
     }
   }
   

@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className="logo">
-        <h1>E-Library</h1>
+        <h1><a href="/">E-BooksShelf</a></h1>
       </div>
       <i className='fa fa-bars' onClick={() =>setActiveMenu(true)}></i>
       <ul className={`nav-list ${activeMenu ? "activeMenu" : ""}`}>

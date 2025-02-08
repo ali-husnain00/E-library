@@ -95,6 +95,9 @@
 }
 
 @media (max-width: 410px){
+    .all-books .books-container{
+        gap: 25px;
+    }
     .all-books h1{
         font-size: 26px;
     }

@@ -15,6 +15,10 @@
   animation: slideDown 1s forwards;
 }
 
+.logo a{
+  color: white;
+}
+
 .navbar i{
   display: none;
 }
@@ -96,20 +100,23 @@
 
   .nav-list {
     flex-direction: column;
-    width: 300px;
+    width: 0;
     background-color: black;
     opacity: 0.9;
     position: absolute;
     top: 0;
-    right: -400px;
+    right: 0;
     padding: 20px 30px;
-    height: 100vh;
+    height: 0;
     gap: 40px;
+    display: none;
     transition: 0.45s all ease;
   }
 
   .activeMenu{
-    right: 0;
+    width: 300px;
+    height: 100vh;
+    display: flex;
   }
 
 }
@@ -126,7 +133,7 @@
     padding: 10px 20px;
   }
   .navbar h1{
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .nav-list{
@@ -134,6 +141,6 @@
   }
 
   .navbar i{
-    font-size: 28px;
+    font-size: 24px;
   }
 }

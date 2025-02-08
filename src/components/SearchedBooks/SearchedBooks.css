@@ -70,3 +70,9 @@
         padding: 50px 20px;
     }
 }
+
+@media (max-width: 410px) {
+    .searchedBooks-list{
+        gap: 25px;
+    }
+}
